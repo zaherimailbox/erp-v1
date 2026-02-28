@@ -2,35 +2,35 @@ name: ERP Build Factory
 
 on:
   push:
-    branches: [ master ] 
-  workflow_dispatch: 
+    branches: [master]
+  workflow_dispatch:
 
 jobs:
   build_and_package:
-    runs-on: ubuntu-latest 
-    
+    runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4 
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Setup pnpm
-   uses: pnpm/action-setup@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4 
-      with:
-        node-version: '20'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-    - name: Install Tools
-      run: pnpm install 
+      - name: Install Tools
+        run: pnpm install
 
-    - name: Build Product
-      run: pnpm build 
+      - name: Build Product
+        run: pnpm build
 
-    - name: Upload Finished Product
-      uses: actions/upload-artifact@v4 
-      with:
-        name: Final-Product-v1
-        path: |
-          index.html
-          dist/
+      - name: Upload Finished Product
+        uses: actions/upload-artifact@v4
+        with:
+          name: Final-Product-v1
+          path: |
+            index.html
+            dist/
