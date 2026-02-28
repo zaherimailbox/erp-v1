@@ -1,0 +1,17 @@
+{
+  "name": "erp-v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass style.sass dist/style.css --style compressed && tsc main.ts --outFile dist/bundle.js --target es6 --module system"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.30.3",
+  "devDependencies": {
+    "sass": "^1.97.3",
+    "typescript": "^5.9.3"
+  }
+}
